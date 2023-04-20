@@ -22,7 +22,7 @@ public class testMain {
     @Test
     public void testMain3() {
         String text = "12";
-        Assert.assertTrue("",main.EsInteger(text));
+        Assert.assertTrue(main.EsInteger(text));
     }
     @Test
     public void testMain4() {
