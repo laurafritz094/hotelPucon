@@ -16,9 +16,67 @@ public class Main {
                 Menu();
                 menuseleccionado = teclado.nextLine();
             }while (!EsInteger(menuseleccionado));
+            int [][] matriz = iniciarMatriz();
+            EleccionMenu(Integer.parseInt(menuseleccionado),matriz);
             reiniciar = deseaseguir();
         }while (reiniciar==true);
     }
+
+    private static int [][] iniciarMatriz() {
+        int [][] matriz = new int[3][10];
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                if (i==1){
+                    matriz[1][j]=1;
+                }
+                if (i==2){
+                    matriz[2][j]=1;
+                }
+                if (i==3){
+                    matriz[3][j]=0;
+                }
+            }
+        }
+        return matriz;
+    }
+
+    private static void EleccionMenu(int parseInt, int[][] matriz) {
+        switch (parseInt) {
+            case 1:
+                ingresoCliente();
+                break;
+            case 2:
+                ConsultarEstadoHabitaciones(matriz);
+                break;
+            case 3:
+                ReservarHabitacion();
+                break;
+            case 4:
+                ImprimirBoleta();
+                break;
+            case 5:
+                reiniciarHotel();
+                break;
+            default:
+                System.out.println("opcion no existe, ingrese otra vez");
+                break;
+        }
+    }
+
+    private static void reiniciarHotel() {
+    }
+
+    private static void ImprimirBoleta() {
+    }
+
+    private static void ReservarHabitacion() {
+        System.out.println("");
+    }
+
+    private static void ConsultarEstadoHabitaciones(int[][] matriz) {
+
+    }
+
 
     private static boolean EsInteger(String text) {
             int v;
