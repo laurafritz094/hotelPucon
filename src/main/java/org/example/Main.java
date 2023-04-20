@@ -12,7 +12,7 @@ public class Main {
         int[][] matriz = new int[3][10];
         return matriz;
     }
-    private static void consultarEstado(int[][]  matriz){
+    public static void consultarEstado(int[][]  matriz){
         // 3.ocupado 1.reservado 0.disponible
         int sala= convertirString(pedirDatos());
         int estado = matriz[0][sala];
@@ -21,13 +21,13 @@ public class Main {
         mostraEstadp(estadoFinal);
 
     }
-    private static String pedirDatos(){
+    public static String pedirDatos(){
         Scanner sc = new Scanner(System.in);
         String consulta = "";
         do {
             System.out.println("ingrese habitación");
             consulta = sc.nextLine();
-        }while(!EsInteger(consulta));
+        } while (!EsInteger(consulta));
 
         return consulta;
 
@@ -65,6 +65,13 @@ public class Main {
     }
     private static void mostraEstadp(String estado){
         System.out.println("El estado de la habitación es :"+estado);
+
+    }
+    private static int [][]eservarHabitación(int[][] matriz){
+        int sala= convertirString(pedirDatos());
+        int estado = matriz[0][sala];
+        estado = 1;
+        return matriz;
 
     }
 }
