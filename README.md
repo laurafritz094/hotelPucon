@@ -9,6 +9,7 @@ arreglo de 10x3 informacion por fila,
 -dias 
 
 metodos 
+- inicializar matriz
 - menu de ingreso de cliente 
 - consultar estado de habitacion 
 - cambiar estado de habitacion 
