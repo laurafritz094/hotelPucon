@@ -6,7 +6,13 @@ arreglo de 10x3 informacion por fila,
 -numero pieza  de hotel (1,2,3,4,5,6,7,8,9,10), 
 -estado de habitacion R,O,D (reservada,ocupada,disponible)
 -con o sin comida (S/N)
+-dias 
 
 metodos 
-- bolet
-
+- menu de ingreso de cliente 
+- consultar estado de habitacion 
+- cambiar estado de habitacion 
+- imprimir boleta y liberar habitacion 
+- reiniciar hotel completo previa confirmacion de clave ("1234")
+- ejecutar hasta que administrador salga 
+- boletear 
