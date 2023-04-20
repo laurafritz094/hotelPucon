@@ -28,7 +28,7 @@ public class Main {
     }
     private static String EstadoHabitacion(int estado){
         String estadonuevo= "";
-        if(estado==1){
+        if(estado==0){
             estadonuevo= "Disponible";
         }
         if(estado==1){
