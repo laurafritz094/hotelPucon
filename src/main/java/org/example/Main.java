@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.swing.plaf.IconUIResource;
 import java.util.Scanner;
 
 public class Main {
@@ -10,20 +11,21 @@ public class Main {
     private static void Inicializador() {
         Scanner teclado = new Scanner(System.in);
         boolean reiniciar = true;
+        int [][] matrizInicio = new int[3][10];
         do {
             String menuseleccionado;
             do {
                 Menu();
                 menuseleccionado = teclado.nextLine();
             }while (!EsInteger(menuseleccionado));
-            int [][] matriz = iniciarMatriz();
+            int [][] matriz = iniciarMatriz(matrizInicio);
             EleccionMenu(Integer.parseInt(menuseleccionado),matriz);
             reiniciar = deseaseguir();
         }while (reiniciar==true);
     }
 
-    private static int [][] iniciarMatriz() {
-        int [][] matriz = new int[3][10];
+    private static int [][] iniciarMatriz(int[][] matriz) {
+
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 if (i==1){
@@ -55,7 +57,7 @@ public class Main {
                 ImprimirBoleta();
                 break;
             case 5:
-                reiniciarHotel();
+                reiniciarHotel(matriz);
                 break;
             default:
                 System.out.println("opcion no existe, ingrese otra vez");
@@ -63,7 +65,13 @@ public class Main {
         }
     }
 
-    private static void reiniciarHotel() {
+    private static void reiniciarHotel(int[][] matriz) {
+        System.out.println("Ingerese contraseña para seguir con el reinicio del hotel :");
+        String contraseña=entradaS();
+        if (contraseña.equals("1234")){
+            int[][] matrizReiniciada = iniciarMatriz(matriz);
+            System.out.println("contraseña valida, informacion del hotel reiniciada");
+        }
     }
 
     private static void ImprimirBoleta() {
@@ -74,11 +82,17 @@ public class Main {
     }
 
     private static void ConsultarEstadoHabitaciones(int[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] +"");
+            }
+            System.out.println();
+        }
 
     }
 
 
-    private static boolean EsInteger(String text) {
+    public static boolean EsInteger(String text) {
             int v;
             try {
                 v=Integer.parseInt(text);
