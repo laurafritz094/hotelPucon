@@ -11,7 +11,7 @@ public class Main {
         return matriz;
     }
     private static String consultarEstado(int[][]  matriz){
-        // 3.ocupado 2.reservado 1.disponible
+        // 3.ocupado 1.reservado 0.disponible
         int sala= pedirDatos();
         int estado = matriz[0][sala];
 
@@ -31,10 +31,10 @@ public class Main {
         if(estado==1){
             estadonuevo= "Disponible";
         }
-        if(estado==2){
+        if(estado==1){
             estadonuevo="Reservado";
         }
-        if(estado==3){
+        if(estado==2){
             estadonuevo="Ocupado";
         }else{
             System.out.println("no esta esta opción");
